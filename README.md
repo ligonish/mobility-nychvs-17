@@ -7,7 +7,7 @@ Sarah Ligon ([@ligonish](https://github.com/ligonish))
 November 2021
 
 <center>
-<img src="plots/sankey.svg" style="width:95.0%" />
+<img src="plots/sankey.png" style="width:95.0%" />
 </center>
 
 In September 2021, I joined a team of two other graduate researchers
