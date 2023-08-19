@@ -8,7 +8,7 @@ output: github_document
 Sarah Ligon ([\@ligonish](https://github.com/ligonish))\
 November 2021
 
-<center>![](plots/sankey.png){width="95%"}</center>
+<center>![](plots/sankey.svg){width="95%"}</center>
 
 In September 2021, I joined a team of two other graduate researchers assessing NYC's [newly-federally-funded](https://www.hud.gov/program_offices/public_indian_housing/programs/hcv/mobilitydemo) Housing Mobility [Demonstration](https://www.nyc.gov/site/hpd/services-and-information/community-choice.page) for the NYU School of Law and School of Public Policy's joint seminar on "Land Use, Housing, & Community Development in New York City". The code, analysis, and visualizations in this repository are my own original contributions to the data section of whatgrew to a 56-page collaborative paper.
 
