@@ -1,7 +1,18 @@
+How Mobile Are NYC’s Housing Choice Voucher Users? An Analysis of the
+2017 NYCHVS
+================
 
-# How Mobile Are NYC’s Housing Choice Voucher Users?
-
-## An Analysis of the 2017 New York City Housing & Vacancy Survey
+- <a href="#data--code-structure" id="toc-data--code-structure">Data &amp;
+  Code Structure</a>
+- <a href="#key-findings" id="toc-key-findings">Key Findings</a>
+  - <a href="#why-new-yorkers-move" id="toc-why-new-yorkers-move">Why New
+    Yorkers Move</a>
+  - <a href="#where-displaced-or-priced-out-new-yorkers-move"
+    id="toc-where-displaced-or-priced-out-new-yorkers-move">Where Displaced
+    or Priced-Out New Yorkers Move</a>
+  - <a href="#mobility-racial-inequity--nycs-mobility-voucher-program"
+    id="toc-mobility-racial-inequity--nycs-mobility-voucher-program">Mobility,
+    Racial Inequity, &amp; NYC’s Mobility Voucher Program</a>
 
 Sarah Ligon ([@ligonish](https://github.com/ligonish))  
 November 2021
@@ -18,8 +29,8 @@ Housing Mobility
 for the NYU School of Law and School of Public Policy’s joint seminar on
 “Land Use, Housing, & Community Development in New York City”. The code,
 analysis, and visualizations in this repository are my own original
-contributions to the data section of whatgrew to a 56-page collaborative
-paper.
+contributions to the data section of what grew to a 56-page
+collaborative paper.
 
 I was skeptical of housing mobility initiatives’ ability to deliver
 racially equitable housing choice to contemporary New Yorkers, and only
@@ -53,7 +64,7 @@ My thanks to NYU Law teammates Eliza Ezrapour and Justin Cook for their
 brilliance and great good humor during what was, by any standards, an
 eerie semester.
 
-### Data & Code Structure
+## Data & Code Structure
 
 Residential mobility is infamously difficult to quantify:
 publicly-available datasets allow very limited tracking of voluntary and
@@ -64,7 +75,7 @@ For this project, my primary source of large-scale NYC housing mobility
 data was the U.S. Census Bureau’s [“New York City Housing and Vacancy
 Survey: 2017 Data
 Files”](https://www.census.gov/data/datasets/2017/demo/nychvs/microdata.html),
-accessed 20 October, 2021 and analyzed in Stata.
+accessed 20 October 2021 and analyzed in Stata.
 
 - See *data_raw* repository folder for original microdata records of
   household-level vacant, household-level-occupied, and person-level
@@ -77,19 +88,29 @@ accessed 20 October, 2021 and analyzed in Stata.
 Pre-analysis setup workflow as documented in this repository’s Stata .do
 files:
 
-- Download the three original occupied & vacant NYCHVS microdata files
-- Make a fourth by appending vacant to occupied housing records (for
-  housing unit estimates)
-- Merge PUMA names for future spatial analysis with IPUMS microdata
-- Convert final and replicate weights (in raw form they have five
-  implied decimal places, so divide by 100k)
-- Set survey design parameters for accurate weighted estimates (I used
-  Stata’s -svset- function, but you can also use R’s *survey* package or
-  similar.
-- See this UCLA
-  [tutorial](stats.idre.ucla.edu/stata/seminars/survey-data-analysis-in-stata-17)
-  on working with sampling weights, survey weights, and other survey
-  design elements accurately in Stata.
+1.  Download the three original occupied & vacant NYCHVS microdata files
+2.  Make a fourth by appending vacant to occupied housing records (for
+    housing unit estimates)
+3.  Merge PUMA names for future spatial analysis with IPUMS microdata
+4.  Convert final and replicate weights (in raw form they have five
+    implied decimal places, so divide by 100k)
+
+``` stata
+replace fw = fw/100000
+foreach x of var fw1 - fw80 {
+    replace `x' = `x' / 100000
+    }   
+```
+
+5.  Set survey design parameters for accurate weighted estimates. I used
+    Stata’s -svset- function, but you can also use R’s *survey* package
+    or similar. See this UCLA
+    [tutorial](stats.idre.ucla.edu/stata/seminars/survey-data-analysis-in-stata-17)
+    on working with sampling weights in Stata.
+
+``` stata
+svyset[pweight = fw], vce(sdr) sdrweight(fw1-fw80) fay(.5)mse
+```
 
 The *stata_do_files* repository folder holds replicable code to produce
 the Stata graphs and tabular data .csv exports I then formatted in
@@ -97,7 +118,7 @@ Google Sheets and/or Datawrapper below. (Current Me would use R for the
 whole process, but 2021 Me was making myself learn Stata for a separate
 Wagner project.)
 
-### Key Findings
+## Key Findings
 
 At first glance, New York owners and renters may seem unexpectedly
 static: while high-income Manhattanites’ headline-grabbing COVID-era
@@ -133,7 +154,7 @@ household size. White renters, on the other hand, spend a
 shorter-than-average number of years in their units, suggesting they
 move more often.
 
-#### Why New Yorkers Move
+### Why New Yorkers Move
 
 The NYCHVS asks heads of households when their household moved to their
 current unit, why they moved to their unit, and the name of the borough
@@ -150,7 +171,7 @@ households said they moved to their current location in search of
 greater housing affordability, while 1 to 3 percent reported moving due
 to eviction, displacement, or harassment by a landlord.
 
-#### Where Housing-Challenged New Yorkers Move
+### Where Displaced or Priced-Out New Yorkers Move
 
 There’s insufficient data at the sub-borough level to produce accurate
 weighted estimates of post-eviction/ displacement/harassment moves to
@@ -167,7 +188,7 @@ evenly across boroughs — an unsurprising fact given both the general
 phrasing of the survey question and the broad spread of households below
 federal poverty limits in virtually every neighborhood of New York City.
 
-#### How Mobile are Housing Choice Voucher Holders?
+### Mobility, Racial Inequity, & NYC’s Mobility Voucher Program
 
 A group that *does*, however, appear to experience moving patterns more
 restricted than the rest of New York City’s is the one meant to have the
@@ -202,7 +223,9 @@ citywide (15.3 years) when compared to other New York householders of
 all other races — experience the *shortest* duration in Section 8 units
 in relation to all other HCV users (see Fig. 3).
 
+<center>
 ![](plots/Fig_3.png)
+</center>
 
 These discrepancies also extend to Section 8 voucher holders’ moving
 patterns across boroughs and sub-boroughs: 43% of Black voucherholders
