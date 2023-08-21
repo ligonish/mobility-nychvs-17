@@ -1,8 +1,6 @@
 ---
 title: "How Mobile Are NYC's Housing Choice Voucher Users? An Analysis of the 2017 NYCHVS"
-output:
-  github_document:
-    toc: true
+output: github_document
 ---
 Sarah Ligon ([\@ligonish](https://github.com/ligonish))\
 November 2021
@@ -76,7 +74,9 @@ Households also tended to cite a need for greater affordability fairly evenly ac
 
 A group that *does*, however, appear to experience moving patterns more restricted than the rest of New York City's is the one meant to have the broadest range of housing choice: Section 8 Housing Choice Voucher (HCV) holders, over 27% of whom are clustered in just four sub-boroughs in the Bronx.
 
-<center>![](plots/map_1.jpg) ![](plots/map_2.jpg)</center>
+<center>![](plots/map_1.jpg){width="40%"}</center>
+
+<center>![](plots/map_2.jpg){width="40%"}</center>
 
 These four sub-boroughs, where 27.29% of all NYC's Section 8 HCV recipients could use their vouchers, are predominantly Black and brown. Resident HCV users reported high levels of heating breakdown and other maintenance failure by landlords.
 
@@ -88,11 +88,11 @@ NYCHVS's estimated 145,499 Section 8 voucher holder households appear unusually 
 
 Black householders --- who overall average the lengthiest unit stays citywide (15.3 years) when compared to other New York householders of all other races --- experience the *shortest* duration in Section 8 units in relation to all other HCV users (see Fig. 3).
 
-<center>![](plots/Fig_3.png)</center>
+<center>![](plots/Fig_3.png){width="80%"}</center>
 
 These discrepancies also extend to Section 8 voucher holders' moving patterns across boroughs and sub-boroughs: 43% of Black voucherholders move to the Bronx, while 72% of white voucher recipients move to Brooklyn (see Table 4).
 
-<center>![](plots/Table_4.jpg){width="60%"}</center>
+<center>![](plots/Table_4.jpg){width="80%"}</center>
 
 Among Section 8 voucher households across NYC, 81.2% of white voucher holding households move to a unit within their current borough, while only 67.6% of Black Section 8 households and 69.1% of Hispanic/Latinx households use their vouchers within the borough in which they already reside.
 
