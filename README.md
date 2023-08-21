@@ -2,18 +2,6 @@ How Mobile Are NYC’s Housing Choice Voucher Users? An Analysis of the
 2017 NYCHVS
 ================
 
-- <a href="#data--code-structure" id="toc-data--code-structure">Data &amp;
-  Code Structure</a>
-- <a href="#key-findings" id="toc-key-findings">Key Findings</a>
-  - <a href="#why-new-yorkers-move" id="toc-why-new-yorkers-move">Why New
-    Yorkers Move</a>
-  - <a href="#where-displaced-or-priced-out-new-yorkers-move"
-    id="toc-where-displaced-or-priced-out-new-yorkers-move">Where Displaced
-    or Priced-Out New Yorkers Move</a>
-  - <a href="#mobility-racial-inequity--nycs-mobility-voucher-program"
-    id="toc-mobility-racial-inequity--nycs-mobility-voucher-program">Mobility,
-    Racial Inequity, &amp; NYC’s Mobility Voucher Program</a>
-
 Sarah Ligon ([@ligonish](https://github.com/ligonish))  
 November 2021
 
@@ -197,7 +185,7 @@ holders, over 27% of whom are clustered in just four sub-boroughs in the
 Bronx.
 
 <center>
-![](plots/map_1.jpg) ![](plots/map_2.jpg)
+<img src="plots/map_1.jpg" style="width:40.0%" /><img src="plots/map_2.jpg" style="width:40.0%" />
 </center>
 
 These four sub-boroughs, where 27.29% of all NYC’s Section 8 HCV
@@ -224,7 +212,7 @@ all other races — experience the *shortest* duration in Section 8 units
 in relation to all other HCV users (see Fig. 3).
 
 <center>
-![](plots/Fig_3.png)
+<img src="plots/Fig_3.png" style="width:80.0%" />
 </center>
 
 These discrepancies also extend to Section 8 voucher holders’ moving
@@ -233,7 +221,7 @@ move to the Bronx, while 72% of white voucher recipients move to
 Brooklyn (see Table 4).
 
 <center>
-<img src="plots/Table_4.jpg" style="width:60.0%" />
+<img src="plots/Table_4.jpg" style="width:80.0%" />
 </center>
 
 Among Section 8 voucher households across NYC, 81.2% of white voucher
