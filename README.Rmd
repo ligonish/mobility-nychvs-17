@@ -74,9 +74,7 @@ Households also tended to cite a need for greater affordability fairly evenly ac
 
 A group that *does*, however, appear to experience moving patterns more restricted than the rest of New York City's is the one meant to have the broadest range of housing choice: Section 8 Housing Choice Voucher (HCV) holders, over 27% of whom are clustered in just four sub-boroughs in the Bronx.
 
-<center>![](plots/map_1.jpg){width="40%"}</center>
-
-<center>![](plots/map_2.jpg){width="40%"}</center>
+<center>![](plots/map_1.jpg){width="40%"}![](plots/map_2.jpg){width="40%"}</center>
 
 These four sub-boroughs, where 27.29% of all NYC's Section 8 HCV recipients could use their vouchers, are predominantly Black and brown. Resident HCV users reported high levels of heating breakdown and other maintenance failure by landlords.
 

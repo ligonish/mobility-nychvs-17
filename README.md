@@ -185,10 +185,7 @@ holders, over 27% of whom are clustered in just four sub-boroughs in the
 Bronx.
 
 <center>
-<img src="plots/map_1.jpg" style="width:40.0%" />
-</center>
-<center>
-<img src="plots/map_2.jpg" style="width:40.0%" />
+<img src="plots/map_1.jpg" style="width:40.0%" /><img src="plots/map_2.jpg" style="width:40.0%" />
 </center>
 
 These four sub-boroughs, where 27.29% of all NYC’s Section 8 HCV
